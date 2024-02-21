@@ -2,6 +2,16 @@ import time
 import os
 import random
 #Aleix Part
+def regressive():
+    print("3")
+    time.sleep(1)
+    clear_console()
+    print("2")
+    time.sleep(1)
+    clear_console()
+    print("1")
+    time.sleep(1)
+    clear_console()
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -20,7 +30,7 @@ def rockPaperScissors():
                 print("Invalid option")
             else:
                 correct = True
-        
+        regressive()
         if user == bot:
             print("tie")
         elif (user == "rock" and bot == "scissors") or (user == "scissors" and bot == "paper") or (user == "paper" and bot == "rock" ):

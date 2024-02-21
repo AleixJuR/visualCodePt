@@ -3,6 +3,7 @@ import os
 import random
 #Aleix Part
 def regressive():
+    clear_console()
     print("3")
     time.sleep(1)
     clear_console()
@@ -16,7 +17,7 @@ def regressive():
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 def rockPaperScissors():
-    options = ['pedra', 'paper', 'tisora']
+    options = ["rock", "paper", "scissors"]
     bot = random.choice(options)
     correct = False
     wins = 0
@@ -24,8 +25,9 @@ def rockPaperScissors():
     times = int(input("How many times you want to play --> "))
     
     for i in range(0,times):
+        bot = random.choice(options)
         while correct == False:
-            user = input("Choose, rock, paper o scissors (en minúscula)")
+            user = input("Choose, rock, paper o scissors (en minúscula) --> ")
             if user != "rock" and user != "paper" and user != "scissors":
                 print("Invalid option")
             else:
@@ -38,9 +40,11 @@ def rockPaperScissors():
             wins +=1
         else:
             print("You lose")
+        correct = False
     print(f"You have won {wins} times of a total of {times}")
 
 
+rockPaperScissors()
 #Arnau Part
 
 #David Part

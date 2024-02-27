@@ -2,6 +2,21 @@ import time
 import os
 import random
 #Aleix Part
+def menu():
+    print("Choose a option")
+    print("1 - Rock Paper Scissors")
+    print("2 - ")
+    print("3 - ")
+    print("0 - Exit")
+    correct = False
+    while(not correct):
+        option = int(input())
+        if option == 1 or option == 2 or option== 3 or option ==0:
+            correct = True
+        else:
+            print("Error")
+    return option
+    
 def regressive():
     clear_console()
     print("3")
@@ -42,9 +57,18 @@ def rockPaperScissors():
             print("You lose")
         correct = False
     print(f"You have won {wins} times of a total of {times}")
+    input("Press any Key to Continue")
+    clear_console()
 
-
-rockPaperScissors()
 #Arnau Part
 
-#David Part
+#Main
+option = menu()
+while (option != 0):
+    if option ==1:
+        rockPaperScissors()
+    if option == 2:
+        print()
+    if option ==3:
+        print()
+    option = menu()

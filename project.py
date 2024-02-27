@@ -67,7 +67,7 @@ def Hanged():
     answers = ['_'] * len(randomWord)
     tries = 7
     win = False
-    while tries >0 or win == True:
+    while tries >0 or win == False:
         letter = input("Say a letter --> ")
         if letter in randomWord:
             for i in range(len(randomWord)):

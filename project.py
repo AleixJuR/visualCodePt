@@ -5,13 +5,14 @@ import random
 def menu():
     print("Choose a option")
     print("1 - Rock Paper Scissors")
-    print("2 - ")
-    print("3 - ")
+    print("2 - Hanged")
+    print("3 - Parameters")
+    print("4 - ")
     print("0 - Exit")
     correct = False
     while(not correct):
         option = int(input())
-        if option == 1 or option == 2 or option== 3 or option ==0:
+        if option == 1 or option == 2 or option== 3 or option ==4 or option ==0:
             correct = True
         else:
             print("Error")
@@ -60,6 +61,30 @@ def rockPaperScissors():
     input("Press any Key to Continue")
     clear_console()
 
+def Hanged():
+    words = ['python', 'github', 'git', 'enviorments', 'development']
+    randomWord = random.choice(words)
+    answers = ['_'] * len(randomWord)
+    tries = 7
+    win = False
+    while tries >0 or win == True:
+        letter = input("Say a letter --> ")
+        if letter in randomWord:
+            for i in range(len(randomWord)):
+                if randomWord[i] == letter:
+                    answers[i] = letter
+        else:
+            tries -=1
+            print(f"INCORRECT ANSWERS - {tries} TRIES REMAINING")
+        
+        print(' '.join(answers))
+
+        if '_' not in answers:
+            print("You Win!")
+            win = True
+    else:
+            print(f"You Lose. The word was {randomWord}")
+
 #Arnau Part
 
 #Main
@@ -68,7 +93,7 @@ while (option != 0):
     if option ==1:
         rockPaperScissors()
     if option == 2:
-        print()
+        Hanged()
     if option ==3:
         print()
     option = menu()

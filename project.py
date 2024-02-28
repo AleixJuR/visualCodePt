@@ -3,18 +3,22 @@ import os
 import random
 #Aleix Part
 def menu():
-    print("Choose a option")
-    print("1 - Rock Paper Scissors")
-    print("2 - Hanged")
-    print("3 - Parameters")
-    print("4 - ")
-    print("0 - Exit")
     correct = False
     while(not correct):
-        option = int(input())
-        if option == 1 or option == 2 or option== 3 or option ==4 or option ==0:
-            correct = True
-        else:
+        try:
+            print("Choose a option")
+            print("1 - Rock Paper Scissors")
+            print("2 - Hanged")
+            print("3 - Parameters")
+            print("4 - ")
+            print("0 - Exit")
+    
+            option = int(input())
+            if option == 1 or option == 2 or option== 3 or option ==4 or option ==0:
+                correct = True
+            else:
+                raise Exception
+        except:
             print("Error")
     return option
     
@@ -62,10 +66,11 @@ def rockPaperScissors():
     clear_console()
 
 def Hanged():
-    words = ['python', 'github', 'git', 'enviorments', 'development']
+    words = ['python', 'github', 'git', 'enviorments', 'development', 'dam', 'montilivi']
     randomWord = random.choice(words)
     answers = ['_'] * len(randomWord)
     tries = 7
+    saidLetters=""
     win = False
     while tries >0 and  win == False:
         letter = input("Say a letter --> ")
@@ -76,13 +81,15 @@ def Hanged():
         else:
             tries -=1
             print(f"INCORRECT ANSWERS - {tries} TRIES REMAINING")
+        saidLetters+=letter
+        print(f"Said Letters -> {saidLetters}")
         
         print(' '.join(answers))
 
         if '_' not in answers:
             print("You Win!")
             win = True
-        else:
+    else:
             if win == False:
                 print(f"You Lose. The word was {randomWord}")
 

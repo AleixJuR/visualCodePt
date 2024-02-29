@@ -112,7 +112,7 @@ def Parameters():
         else:
             print(f"The {num} was within the parameters, you won!! :D")
             correct = True
-      print(f"The parameters are {bot1, bot2}")#here it will be shown the parameters wich were randomly choosed.
+        print(f"The parameters are {bot1, bot2}")#here it will be shown the parameters wich were randomly choosed.
         
 
 def FindTheSpot():
